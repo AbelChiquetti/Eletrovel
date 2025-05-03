@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadYouTubeVideo() {
     // Verifica se está em dispositivo móvel
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     
     // IDs dos vídeos para desktop e mobile
     const desktopVideoId = "DoITINgRlNg"; // ID do vídeo para desktop
@@ -14,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Cria o player do YouTube quando a API estiver pronta
     if (typeof YT !== 'undefined' && YT.Player) {
-      createYouTubePlayer(videoId);
+      createYouTubePlayer(videoId, isIOS);
     } else {
       // Caso a API ainda não esteja carregada, adiciona callback
       window.onYouTubeIframeAPIReady = function() {
-        createYouTubePlayer(videoId);
+        createYouTubePlayer(videoId, isIOS);
       };
       
       // Carrega a API do YouTube se ainda não estiver carregada
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   // Função para criar o player do YouTube
-  function createYouTubePlayer(videoId) {
+  function createYouTubePlayer(videoId, isIOS) {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     // Ajusta as proporções do player dependendo do dispositivo
@@ -56,12 +57,49 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
     
-    // Cria o player
-    new YT.Player('youtube-player', playerOptions);
-    
-    // Adiciona classe ao body para estilos específicos mobile
-    if (isMobile) {
-      document.body.classList.add('mobile-video');
+    // Para iOS, também é necessário um toque do usuário para iniciar mídia
+    if (isIOS) {
+      // Criar uma camada transparente para detectar interação
+      const interactionLayer = document.createElement('div');
+      interactionLayer.className = 'ios-interaction-layer';
+      interactionLayer.style.position = 'absolute';
+      interactionLayer.style.top = '0';
+      interactionLayer.style.left = '0';
+      interactionLayer.style.width = '100%';
+      interactionLayer.style.height = '100%';
+      interactionLayer.style.zIndex = '100';
+      interactionLayer.style.cursor = 'pointer';
+      
+      const videoHero = document.querySelector('.video-hero');
+      if (videoHero) {
+        videoHero.appendChild(interactionLayer);
+        
+        // Evento de toque para iniciar o vídeo
+        interactionLayer.addEventListener('touchstart', function() {
+          // Cria o player somente após a interação do usuário
+          const player = new YT.Player('youtube-player', playerOptions);
+          
+          // Remove a camada de interação após o primeiro toque
+          setTimeout(function() {
+            interactionLayer.style.display = 'none';
+          }, 1000);
+          
+          // Adiciona classe para estilos específicos mobile
+          if (isMobile) {
+            document.body.classList.add('mobile-video');
+          }
+          
+          document.documentElement.classList.add('youtube-loaded');
+        }, {once: true});
+      }
+    } else {
+      // Para não-iOS, criar o player normalmente
+      const player = new YT.Player('youtube-player', playerOptions);
+      
+      // Adiciona classe para estilos específicos mobile
+      if (isMobile) {
+        document.body.classList.add('mobile-video');
+      }
     }
   }
   
@@ -70,12 +108,34 @@ document.addEventListener("DOMContentLoaded", function () {
     event.target.playVideo();
     event.target.mute(); // Garante que esteja mudo
     document.documentElement.classList.add('youtube-loaded');
+    
+    // Em iOS, às vezes precisamos tentar reproduzir várias vezes
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isIOS) {
+      const playInterval = setInterval(function() {
+        if (event.target.getPlayerState() !== YT.PlayerState.PLAYING) {
+          event.target.playVideo();
+        } else {
+          clearInterval(playInterval);
+        }
+      }, 300);
+      
+      // Limpar o intervalo após 5 segundos de qualquer maneira
+      setTimeout(function() {
+        clearInterval(playInterval);
+      }, 5000);
+    }
   }
   
   // Monitora mudanças de estado do player
   function onPlayerStateChange(event) {
     // Se o vídeo parar, reinicia
     if (event.data === YT.PlayerState.ENDED) {
+      event.target.playVideo();
+    }
+    
+    // Se o vídeo pausar, tenta reiniciar (para iOS)
+    if (event.data === YT.PlayerState.PAUSED) {
       event.target.playVideo();
     }
   }
