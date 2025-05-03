@@ -1,5 +1,88 @@
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", function () {
+  // YouTube Video Background Implementation
+  function loadYouTubeVideo() {
+    // Verifica se está em dispositivo móvel
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // IDs dos vídeos para desktop e mobile
+    const desktopVideoId = "DoITINgRlNg"; // ID do vídeo para desktop
+    const mobileVideoId = "72-4Wxokmfc";  // ID do vídeo para mobile
+    
+    // Seleciona o ID do vídeo com base no dispositivo
+    const videoId = isMobile ? mobileVideoId : desktopVideoId;
+    
+    // Cria o player do YouTube quando a API estiver pronta
+    if (typeof YT !== 'undefined' && YT.Player) {
+      createYouTubePlayer(videoId);
+    } else {
+      // Caso a API ainda não esteja carregada, adiciona callback
+      window.onYouTubeIframeAPIReady = function() {
+        createYouTubePlayer(videoId);
+      };
+      
+      // Carrega a API do YouTube se ainda não estiver carregada
+      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
+    }
+  }
+  
+  // Função para criar o player do YouTube
+  function createYouTubePlayer(videoId) {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Ajusta as proporções do player dependendo do dispositivo
+    const playerOptions = {
+      videoId: videoId,
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 1,
+        iv_load_policy: 3,
+        loop: 1,
+        playlist: videoId,
+        mute: 1, // Sempre mudo
+        playsinline: 1, // Importante para iOS
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    };
+    
+    // Cria o player
+    new YT.Player('youtube-player', playerOptions);
+    
+    // Adiciona classe ao body para estilos específicos mobile
+    if (isMobile) {
+      document.body.classList.add('mobile-video');
+    }
+  }
+  
+  // Quando o player estiver pronto
+  function onPlayerReady(event) {
+    event.target.playVideo();
+    event.target.mute(); // Garante que esteja mudo
+    document.documentElement.classList.add('youtube-loaded');
+  }
+  
+  // Monitora mudanças de estado do player
+  function onPlayerStateChange(event) {
+    // Se o vídeo parar, reinicia
+    if (event.data === YT.PlayerState.ENDED) {
+      event.target.playVideo();
+    }
+  }
+  
+  // Inicia o carregamento do vídeo
+  loadYouTubeVideo();
+
   // Mobile Menu Toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");

@@ -411,23 +411,23 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
-  width: 300px; /* Definindo uma largura fixa */
-  height: 200px; /* Definindo uma altura fixa */
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.marca-item:hover {
+  transform: translateY(-5px);
 }
 
 .marca-item img {
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
   height: auto;
+  max-height: 180px;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s;
-}
-
-.marca-item img:hover {
-  filter: grayscale(0%);
+  margin: 0 auto;
 }
 
 @keyframes slide-left {
@@ -1555,11 +1555,15 @@ footer p i {
 
   #youtube-player {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    transform: scale(1.1); /* Amplia um pouco para evitar bordas */
+    top: 50%;
+    left: 50%;
+    min-width: 150% !important;
+    min-height: 150% !important;
+    width: auto !important;
+    height: auto !important;
+    transform: translate(-50%, -50%) scale(1.8) !important;
+    pointer-events: none; /* Prevents interaction with the video */
+    z-index: 1;
   }
 
   .video-background iframe {
@@ -1595,9 +1599,6 @@ footer p i {
   }
   .video-hero .hero-content h1 {
     font-size: 2.2rem;
-  }
-  .subtitle-container {
-    padding: 12px 25px;
   }
   .subtitle-container p {
     font-size: 1.1rem;
@@ -1699,6 +1700,21 @@ footer p i {
   .service-highlight .agendamento-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .marca-item img {
+    height: 160px;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .marca-item {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -1969,15 +1985,20 @@ footer p i {
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  background-color: #000;
 }
 
 #youtube-player {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Prevents interaction with the video */
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.5);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .video-overlay {
@@ -1992,7 +2013,130 @@ footer p i {
     rgba(10, 25, 47, 0.75) 100%
   );
   z-index: 10;
-  pointer-events: none; /* Allows clicks to pass through to elements below */
+  pointer-events: none;
+}
+
+.fallback-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(10, 25, 47, 0.7) 0%,
+      rgba(10, 25, 47, 0.5) 100%
+    ),
+    url("assets/equipe.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.youtube-loaded .fallback-image {
+  opacity: 0;
+}
+
+/* Responsivo para vídeo em mobile */
+@media (max-width: 768px) {
+  .video-hero {
+    height: 100vh;
+    max-height: 100vh;
+  }
+  
+  #youtube-player {
+    min-width: 150% !important;
+    min-height: 150% !important;
+    transform: translate(-50%, -50%) scale(1.8) !important;
+  }
+}
+
+/* Ajustes para telas muito estreitas */
+@media (max-width: 480px) and (orientation: portrait) {
+  #youtube-player {
+    transform: translate(-50%, -50%) scale(2.2) !important;
+  }
+}
+
+/* Ajustes para telas em landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+  #youtube-player {
+    transform: translate(-50%, -50%) scale(1.5) !important;
+  }
+}
+
+/* Classe auxiliar adicionada via JavaScript */
+body.mobile-video #youtube-player {
+  min-width: 150% !important;
+  min-height: 150% !important;
+  transform: translate(-50%, -50%) scale(1.8) !important;
+}
+
+/* Estilos específicos para mobile */
+@media (max-width: 768px) {
+  .video-hero {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  .video-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  #youtube-player {
+    min-width: 150% !important;
+    min-height: 150% !important;
+    width: auto !important;
+    height: auto !important;
+    transform: translate(-50%, -50%) scale(1.8) !important;
+  }
+}
+
+/* Específicos para dispositivos em portrait muito estreitos */
+@media (max-width: 480px) and (orientation: portrait) {
+  #youtube-player {
+    transform: translate(-50%, -50%) scale(2.2) !important;
+  }
+}
+
+/* Específicos para dispositivos em landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+  #youtube-player {
+    transform: translate(-50%, -50%) scale(1.5) !important;
+  }
+}
+
+/* Estilos para quando a classe mobile-video é adicionada pelo JS */
+body.mobile-video .video-background {
+  overflow: hidden;
+  background-color: #000;
+}
+
+body.mobile-video .video-hero {
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #000;
+}
+
+body.mobile-video #youtube-player {
+  min-width: 150% !important;
+  min-height: 150% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) scale(1.8) !important;
+}
+
+/* Estilo específico quando o vídeo estiver carregado */
+.youtube-loaded .fallback-image {
+  opacity: 0;
 }
 
 .video-hero .hero-content {
@@ -2205,25 +2349,6 @@ footer p i {
 
 .footer {
   background: linear-gradient(135deg, #0d1e30 0%, #1a3b5d 100%);
-}
-
-.fallback-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-      to right,
-      rgba(10, 25, 47, 0.7) 0%,
-      rgba(10, 25, 47, 0.5) 100%
-    ),
-    url("assets/equipe.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 1s ease;
 }
 
 /* Hide fallback when YouTube player is loaded */
@@ -2590,10 +2715,17 @@ body.mobile-video .video-background iframe {
 @media (max-width: 576px) {
   .marca-item img {
     height: 160px;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
   }
 
   .marca-item {
-    padding: 0 15px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -2619,6 +2751,8 @@ body.mobile-video .video-background iframe {
   padding: 1rem;
   transition: transform 0.3s ease;
   height: 200px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .marca-item:hover {
@@ -2630,6 +2764,7 @@ body.mobile-video .video-background iframe {
   height: auto;
   max-height: 180px;
   object-fit: contain;
+  margin: 0 auto;
 }
 
 /* Navigation buttons */
@@ -2737,10 +2872,14 @@ body.mobile-video .video-background iframe {
   .marca-item {
     padding: 0.5rem;
     height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .marca-item img {
     max-height: 140px;
+    margin: 0 auto;
   }
 
   .marcas-slider .swiper-button-next,
@@ -2761,5 +2900,26 @@ body.mobile-video .video-background iframe {
 
   .marca-logo img {
     max-height: 40px;
+  }
+}
+
+/* Ajustes para centralização dos carros no mobile */
+@media (max-width: 768px) {
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .marca-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .marca-item img {
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
   }
 }
