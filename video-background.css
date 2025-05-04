@@ -23,8 +23,8 @@
   background-color: #000; /* Black background to avoid empty spaces */
 }
 
-/* YouTube player styles */
-#youtube-player {
+/* Vídeo HTML5 Nativo */
+#background-video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,7 +33,7 @@
   width: auto;
   height: auto;
   transform: translate(-50%, -50%) scale(1.5);
-  pointer-events: none; /* Prevents interaction with video */
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -73,8 +73,8 @@
   transition: opacity 1s ease;
 }
 
-/* Hide fallback when YouTube player is loaded */
-.youtube-loaded .fallback-image {
+/* Hide fallback when video loads */
+.video-loaded .fallback-image {
   opacity: 0;
 }
 
@@ -85,7 +85,7 @@
     max-height: 100vh;
   }
   
-  #youtube-player {
+  #background-video {
     min-width: 150% !important;
     min-height: 150% !important;
     transform: translate(-50%, -50%) scale(1.8) !important;
@@ -94,63 +94,21 @@
 
 /* Extra adjustments for very narrow screens in portrait mode */
 @media (max-width: 480px) and (orientation: portrait) {
-  #youtube-player {
+  #background-video {
     transform: translate(-50%, -50%) scale(2.2) !important;
   }
 }
 
 /* Adjustments for landscape mode */
 @media (max-width: 900px) and (orientation: landscape) {
-  #youtube-player {
+  #background-video {
     transform: translate(-50%, -50%) scale(1.5) !important;
   }
 }
 
 /* Class added by JS to help with mobile video */
-body.mobile-video #youtube-player {
+body.mobile-video #background-video {
   min-width: 150% !important;
   min-height: 150% !important;
   transform: translate(-50%, -50%) scale(1.8) !important;
-}
-
-/* iOS interaction layer */
-.ios-interaction-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.ios-interaction-layer::after {
-  content: "Toque para iniciar";
-  color: white;
-  font-size: 20px;
-  padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50px;
-  font-weight: 600;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 } 

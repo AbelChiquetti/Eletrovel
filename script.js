@@ -1,147 +1,33 @@
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", function () {
-  // YouTube Video Background Implementation
-  function loadYouTubeVideo() {
-    // Verifica se está em dispositivo móvel
+  // Gestão de Vídeo de Fundo HTML5
+  const videoElement = document.getElementById('background-video');
+  const fallbackImage = document.querySelector('.fallback-image');
+  
+  if (videoElement) {
+    // Verificar se o vídeo carregou com sucesso
+    videoElement.addEventListener('loadeddata', function() {
+      // Adiciona classe para ocultar a imagem de fallback
+      document.documentElement.classList.add('video-loaded');
+      console.log("Vídeo carregado com sucesso");
+    });
+    
+    // Tratamento de erros - se o vídeo falhar, mantenha a imagem fallback
+    videoElement.addEventListener('error', function() {
+      console.log("Erro ao carregar o vídeo, usando imagem fallback");
+    });
+    
+    // Força play em iOS (pode ser necessário após interação do usuário)
+    document.addEventListener('touchstart', function() {
+      videoElement.play();
+    }, {once: true});
+    
+    // Detecta se é mobile para adicionar classe específica 
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    
-    // IDs dos vídeos para desktop e mobile
-    const desktopVideoId = "DoITINgRlNg"; // ID do vídeo para desktop
-    const mobileVideoId = "72-4Wxokmfc";  // ID do vídeo para mobile
-    
-    // Seleciona o ID do vídeo com base no dispositivo
-    const videoId = isMobile ? mobileVideoId : desktopVideoId;
-    
-    // Cria o player do YouTube quando a API estiver pronta
-    if (typeof YT !== 'undefined' && YT.Player) {
-      createYouTubePlayer(videoId, isIOS);
-    } else {
-      // Caso a API ainda não esteja carregada, adiciona callback
-      window.onYouTubeIframeAPIReady = function() {
-        createYouTubePlayer(videoId, isIOS);
-      };
-      
-      // Carrega a API do YouTube se ainda não estiver carregada
-      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      }
+    if (isMobile) {
+      document.body.classList.add('mobile-video');
     }
   }
-  
-  // Função para criar o player do YouTube
-  function createYouTubePlayer(videoId, isIOS) {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    // Ajusta as proporções do player dependendo do dispositivo
-    const playerOptions = {
-      videoId: videoId,
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        rel: 0,
-        showinfo: 0,
-        modestbranding: 1,
-        iv_load_policy: 3,
-        loop: 1,
-        playlist: videoId,
-        mute: 1, // Sempre mudo
-        playsinline: 1, // Importante para iOS
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    };
-    
-    // Para iOS, também é necessário um toque do usuário para iniciar mídia
-    if (isIOS) {
-      // Criar uma camada transparente para detectar interação
-      const interactionLayer = document.createElement('div');
-      interactionLayer.className = 'ios-interaction-layer';
-      interactionLayer.style.position = 'absolute';
-      interactionLayer.style.top = '0';
-      interactionLayer.style.left = '0';
-      interactionLayer.style.width = '100%';
-      interactionLayer.style.height = '100%';
-      interactionLayer.style.zIndex = '100';
-      interactionLayer.style.cursor = 'pointer';
-      
-      const videoHero = document.querySelector('.video-hero');
-      if (videoHero) {
-        videoHero.appendChild(interactionLayer);
-        
-        // Evento de toque para iniciar o vídeo
-        interactionLayer.addEventListener('touchstart', function() {
-          // Cria o player somente após a interação do usuário
-          const player = new YT.Player('youtube-player', playerOptions);
-          
-          // Remove a camada de interação após o primeiro toque
-          setTimeout(function() {
-            interactionLayer.style.display = 'none';
-          }, 1000);
-          
-          // Adiciona classe para estilos específicos mobile
-          if (isMobile) {
-            document.body.classList.add('mobile-video');
-          }
-          
-          document.documentElement.classList.add('youtube-loaded');
-        }, {once: true});
-      }
-    } else {
-      // Para não-iOS, criar o player normalmente
-      const player = new YT.Player('youtube-player', playerOptions);
-      
-      // Adiciona classe para estilos específicos mobile
-      if (isMobile) {
-        document.body.classList.add('mobile-video');
-      }
-    }
-  }
-  
-  // Quando o player estiver pronto
-  function onPlayerReady(event) {
-    event.target.playVideo();
-    event.target.mute(); // Garante que esteja mudo
-    document.documentElement.classList.add('youtube-loaded');
-    
-    // Em iOS, às vezes precisamos tentar reproduzir várias vezes
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isIOS) {
-      const playInterval = setInterval(function() {
-        if (event.target.getPlayerState() !== YT.PlayerState.PLAYING) {
-          event.target.playVideo();
-        } else {
-          clearInterval(playInterval);
-        }
-      }, 300);
-      
-      // Limpar o intervalo após 5 segundos de qualquer maneira
-      setTimeout(function() {
-        clearInterval(playInterval);
-      }, 5000);
-    }
-  }
-  
-  // Monitora mudanças de estado do player
-  function onPlayerStateChange(event) {
-    // Se o vídeo parar, reinicia
-    if (event.data === YT.PlayerState.ENDED) {
-      event.target.playVideo();
-    }
-    
-    // Se o vídeo pausar, tenta reiniciar (para iOS)
-    if (event.data === YT.PlayerState.PAUSED) {
-      event.target.playVideo();
-    }
-  }
-  
-  // Inicia o carregamento do vídeo
-  loadYouTubeVideo();
 
   // Mobile Menu Toggle
   const menuToggle = document.querySelector(".menu-toggle");

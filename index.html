@@ -73,7 +73,11 @@
       <!-- Video Hero Background -->
       <div class="video-hero">
         <div class="video-background">
-          <div id="youtube-player"></div>
+          <video id="background-video" autoplay muted loop playsinline>
+            <!-- Fontes de vídeo baseadas no tipo de dispositivo -->
+            <source class="desktop-video" src="assets/videos/pc.mp4" type="video/mp4" media="all and (min-width: 768px)">
+            <source class="mobile-video" src="assets/videos/mobile.mp4" type="video/mp4" media="all and (max-width: 767px)">
+          </video>
           <div class="video-overlay"></div>
           <!-- Fallback background image in case video doesn't load -->
           <div class="fallback-image"></div>
