@@ -1,9 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+       xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+   <!-- Página Principal -->
    <url>
-      <loc>https://www.eletrovel.com.br/</loc>
-      <lastmod>2023-11-19</lastmod>
-      <changefreq>monthly</changefreq>
+      <loc>https://oficinacarrosflorianopolis.com.br/</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>1.0</priority>
+      <image:image>
+         <image:loc>https://oficinacarrosflorianopolis.com.br/assets/logo.webp</image:loc>
+         <image:title>Logo Eletrovel - Oficina Mecânica Especializada</image:title>
+      </image:image>
+      <video:video>
+         <video:thumbnail_loc>https://oficinacarrosflorianopolis.com.br/assets/equipe.jpg</video:thumbnail_loc>
+         <video:title>Vídeo Institucional Eletrovel</video:title>
+         <video:description>Conheça a Eletrovel, referência em serviços automotivos há mais de 32 anos</video:description>
+         <video:content_loc>https://oficinacarrosflorianopolis.com.br/assets/videos/pc.mp4</video:content_loc>
+         <video:duration>30</video:duration>
+         <video:family_friendly>yes</video:family_friendly>
+      </video:video>
    </url>
-</urlset> 
+   
+   <!-- Seções Principais -->
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#sobre</loc>
+      <lastmod>2025-06-05</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+      <image:image>
+         <image:loc>https://oficinacarrosflorianopolis.com.br/assets/equipe.jpg</image:loc>
+         <image:title>Equipe Eletrovel - 32 anos de experiência</image:title>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#equipe</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+      <image:image>
+         <image:loc>https://oficinacarrosflorianopolis.com.br/assets/familia.webp</image:loc>
+         <image:title>Equipe de profissionais Eletrovel</image:title>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#reviews</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <!-- Serviços Especializados -->
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#revisao-troca-oleo</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+      <image:image>
+         <image:loc>https://oficinacarrosflorianopolis.com.br/assets/carros/ranger.webp</image:loc>
+         <image:title>Revisão e Troca de Óleo Especializada Eletrovel</image:title>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/servicos/cambio-automatico</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/servicos/mecanica-geral</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/servicos/suspensao</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/servicos/freios</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#perguntas</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/#contato</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+      <image:image>
+         <image:loc>https://oficinacarrosflorianopolis.com.br/assets/loja.webp</image:loc>
+         <image:title>Localização da Eletrovel em São José - SC</image:title>
+      </image:image>
+   </url>
+   
+   <!-- Blog e Conteúdo Informativo -->
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/blog</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/blog/importancia-troca-oleo-cambio</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   
+   <url>
+      <loc>https://oficinacarrosflorianopolis.com.br/blog/manutencao-preventiva-veicular</loc>
+      <lastmod>2025-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+</urlset>

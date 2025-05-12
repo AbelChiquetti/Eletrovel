@@ -1,0 +1,7 @@
+# Garantir que os arquivos nesta pasta sejam servidos normalmente
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>
+
+# Certificar que o PHP não tenta redirecionar páginas existentes
+Options -MultiViews 

@@ -1,0 +1,12 @@
+# Redirecionar qualquer página não encontrada para a página 404.php que tratará o redirecionamento
+ErrorDocument 404 /404.php
+
+# Se o servidor não suportar PHP, tente usar a página HTML
+<IfModule !mod_php.c>
+  ErrorDocument 404 /404.html
+</IfModule>
+
+# Alternativa mais direta se nada acima funcionar
+<Files 404.php>
+  ForceType application/x-httpd-php
+</Files> 

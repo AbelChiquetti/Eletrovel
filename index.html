@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <script>
+      // Redirecionamento imediato para URLs não encontradas
+      // Posicionado no topo para ser executado antes de qualquer outra coisa
+      if (window.location.pathname !== '/' && 
+          window.location.pathname !== '/index.html' && 
+          window.location.pathname !== '/404.html' &&
+          !window.location.pathname.startsWith('/marca/')) {
+        window.location.replace('/');
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -14,6 +24,13 @@
     <title>
       Eletrovel - Oficina de Carros e Revisão Automotiva Especializada
     </title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPV654H');</script>
+    <!-- End Google Tag Manager -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -33,8 +50,13 @@
     <!-- Preload important assets -->
     <link rel="preload" href="assets/logo.webp" as="image" />
     <link rel="stylesheet" href="marcas-slider.css" />
+    <script>!function(){var s=document.createElement('script');s.src='https://sherlockads.com.br/saevents';s.async=true;s.onload=function(){saq('init','554832478517');};document.head.appendChild(s);}();</script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPV654H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header id="home" class="header">
       <nav class="navbar">
         <div class="container">
@@ -60,7 +82,7 @@
             <li><a href="#contato">Contato</a></li>
             <li>
               <a
-                href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
                 class="btn-whatsapp animate-pulse"
                 style="padding: 10px 20px"
                 ><i class="fab fa-whatsapp"></i> Agendar</a
@@ -95,7 +117,7 @@
             </p>
           </div>
           <a
-            href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+            href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
             class="btn btn-primary agendamento-btn"
             ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO</a
           >
@@ -204,10 +226,26 @@
               SEGURANÇA e QUALIDADE os problemas do seu carro.
             </p>
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
               class="btn btn-primary glow-effect agendamento-btn"
               ><i class="fab fa-whatsapp"></i> AGENDAR AGORA</a
             >
+          </div>
+          
+          <!-- Vídeo apenas para mobile -->
+          <div class="mobile-only-video">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="230"
+                src="https://www.youtube.com/embed/YRbrUbaOTRo"
+                title="Eletrovel - Vídeo Informativo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -285,16 +323,16 @@
                 <img src="assets/marcas/kia.png" alt="Kia" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro3.png" alt="Honda" />
+                <img src="assets/marcas/honda.png" alt="Honda" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Nissan" />
+                <img src="assets/marcas/nissan.webp" alt="Nissan" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro1.png" alt="Renault" />
+                <img src="assets/marcas/renault.png" alt="Renault" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro2.png" alt="Jeep" />
+                <img src="assets/marcas/jeep.png" alt="Jeep" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/ford.png" alt="Ford" />
@@ -315,16 +353,16 @@
                 <img src="assets/marcas/kia.png" alt="Kia" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro3.png" alt="Honda" />
+                <img src="assets/marcas/honda.png" alt="Honda" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Nissan" />
+                <img src="assets/marcas/nissan.webp" alt="Nissan" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro1.png" alt="Renault" />
+                <img src="assets/marcas/renault.png" alt="Renault" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro2.png" alt="Jeep" />
+                <img src="assets/marcas/jeep.png" alt="Jeep" />
               </div>
             </div>
 
@@ -334,7 +372,7 @@
                 <img src="assets/marcas/mitsubishi.png" alt="Mitsubishi" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="BMW" />
+                <img src="assets/marcas/bmw.png" alt="BMW" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/mercedes-benz.png" alt="Mercedes-Benz" />
@@ -343,19 +381,13 @@
                 <img src="assets/marcas/audi.png" alt="Audi" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Citroën" />
+                <img src="assets/marcas/citroen.png" alt="Citroën" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/peugeot.png" alt="Peugeot" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro2.png" alt="Subaru" />
-              </div>
-              <div class="marca-logo">
-                <img src="assets/marcas/carro3.png" alt="Volvo" />
-              </div>
-              <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Land Rover" />
+                <img src="assets/marcas/volvo.png" alt="Volvo" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/fiat.png" alt="Fiat" />
@@ -364,7 +396,7 @@
                 <img src="assets/marcas/mitsubishi.png" alt="Mitsubishi" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="BMW" />
+                <img src="assets/marcas/bmw.png" alt="BMW" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/mercedes-benz.png" alt="Mercedes-Benz" />
@@ -373,19 +405,13 @@
                 <img src="assets/marcas/audi.png" alt="Audi" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Citroën" />
+                <img src="assets/marcas/citroen.png" alt="Citroën" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/peugeot.png" alt="Peugeot" />
               </div>
               <div class="marca-logo">
-                <img src="assets/marcas/carro2.png" alt="Subaru" />
-              </div>
-              <div class="marca-logo">
-                <img src="assets/marcas/carro3.png" alt="Volvo" />
-              </div>
-              <div class="marca-logo">
-                <img src="assets/marcas/carro4.png" alt="Land Rover" />
+                <img src="assets/marcas/volvo.png" alt="Volvo" />
               </div>
               <div class="marca-logo">
                 <img src="assets/marcas/fiat.png" alt="Fiat" />
@@ -507,7 +533,7 @@
               referência em serviços automotivos em Santa Catarina.
             </p>
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
               class="btn btn-primary shine-effect agendamento-btn"
               ><i class="fab fa-whatsapp"></i> FALE COM NOSSA EQUIPE</a
             >
@@ -944,7 +970,7 @@
                 </ul>
                 <p>
                   <a
-                    href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                    href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
                     class="btn btn-primary"
                   >
                     <i class="fab fa-whatsapp"></i> WHATSAPP
@@ -1095,7 +1121,7 @@
                 </p>
                 <p>
                   <a
-                    href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                    href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
                     class="btn btn-primary"
                   >
                     <i class="fab fa-whatsapp"></i> WHATSAPP
@@ -1265,7 +1291,7 @@
           </div>
           <div class="service-action">
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
               class="btn btn-primary agendamento-btn"
               ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO OU TROCA DE
               ÓLEO</a
@@ -1300,7 +1326,7 @@
                   Agende agora uma avaliação gratuita com nossos especialistas
                 </p>
                 <a
-                  href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                  href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!"
                   class="btn btn-large agendamento-btn"
                   style="color: var(--light-color)"
                   ><i class="fab fa-whatsapp"></i> AGENDAR PELO WHATSAPP</a
@@ -1330,24 +1356,24 @@
               <i class="fas fa-map-marker-alt"></i> R. Lídio Antônio de Matos, 10 - Kobrasol, São José - SC
             </p>
             <p><i class="fas fa-phone"></i> (48) 3247-8517</p>
-            <p><i class="fas fa-envelope"></i> contato@eletrovel.com.br</p>
+            <p><i class="fas fa-phone"></i> (48) 99699-0198</p>
+            <p><i class="fas fa-envelope"></i> eletrovel.vendas@gmail.com</p>
           </div>
           <div class="footer-hours">
             <h3>HORÁRIO DE FUNCIONAMENTO</h3>
-            <p>Segunda a Sexta: 8h às 18h</p>
-            <p>Sábado: 8h às 13h</p>
-            <p>Domingo: Fechado</p>
+            <p>Segunda a Sexta: 8h às 12h - 13h30 às 18h</p>
+            <p>Sab e Dom: Fechado</p>
           </div>
           <div class="footer-social">
             <h3>REDES SOCIAIS</h3>
             <div class="social-icons">
-              <a href="#" aria-label="Facebook" class="social-icon-hover"
+              <a href="https://www.facebook.com/Eletrovel" aria-label="Facebook" class="social-icon-hover"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-              <a href="#" aria-label="Instagram" class="social-icon-hover"
+              <a href="https://www.instagram.com/mecanica_eletrovel" aria-label="Instagram" class="social-icon-hover"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="#" aria-label="WhatsApp" class="social-icon-hover"
+              <a href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais!" aria-label="WhatsApp" class="social-icon-hover"
                 ><i class="fab fa-whatsapp"></i
               ></a>
             </div>

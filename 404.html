@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        // Redirecionar para a página inicial, exceto para URLs na pasta marca
+        var path = window.location.pathname;
+        if (!path.startsWith('/marca/')) {
+            window.location.replace('/');
+        } else {
+            // Se for uma URL da pasta marca, assumimos que está certo
+            // ou o servidor já verificou que o arquivo existe
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d1e30;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .redirect-message {
+            display: none; /* Escondido inicialmente pois esperamos redirecionamento instantâneo */
+        }
+        a {
+            color: #06b25f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Mostrar a mensagem após 1 segundo se o redirecionamento automático falhar */
+        body.show-message .redirect-message {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-message">
+        <h1>Redirecionando...</h1>
+        <p>Se não for redirecionado automaticamente, <a href="/">clique aqui</a>.</p>
+    </div>
+    
+    <script>
+        // Mostrar a mensagem depois de 1 segundo se ainda estivermos nesta página
+        setTimeout(function() {
+            document.body.className = 'show-message';
+        }, 1000);
+    </script>
+</body>
+</html> 

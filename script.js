@@ -1,5 +1,65 @@
+// Verificar e redirecionar URLs inexistentes
+(function() {
+  // Função para verificar se a página atual existe
+  function checkPageExists() {
+    // Se o documento não tem conteúdo principal, provavelmente é uma página inexistente
+    if (!document.body || document.body.innerHTML.trim() === '') {
+      // Redirecionar para a página inicial
+      window.location.href = '/';
+    }
+  }
+
+  // Verificar após um curto período para dar tempo ao DOM carregar
+  setTimeout(checkPageExists, 100);
+  
+  // Verificar também quando o DOM estiver pronto
+  document.addEventListener('DOMContentLoaded', function() {
+    // Se estamos em uma URL que não é a página inicial e a página parece vazia ou quebrada
+    if (window.location.pathname !== '/' && 
+        window.location.pathname !== '/index.html' && 
+        (!document.title || document.title === '' || 
+         document.body.children.length < 3)) {
+      window.location.href = '/';
+    }
+  });
+})();
+
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", function () {
+  // Sherlock Ads Integration
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PPV654H');
+
+  // Função para capturar e processar parâmetros UTM
+  function processUTMParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = {
+      utm_source: urlParams.get('utm_source'),
+      utm_medium: urlParams.get('utm_medium'),
+      utm_campaign: urlParams.get('utm_campaign'),
+      utm_term: urlParams.get('utm_term'),
+      utm_content: urlParams.get('utm_content')
+    };
+
+    // Enviar dados para o Sherlock Ads
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'utm_parameters',
+        'utm_source': utmParams.utm_source,
+        'utm_medium': utmParams.utm_medium,
+        'utm_campaign': utmParams.utm_campaign,
+        'utm_term': utmParams.utm_term,
+        'utm_content': utmParams.utm_content
+      });
+    }
+  }
+
+  // Executar o processamento dos parâmetros UTM
+  processUTMParameters();
+
   // Gestão de Vídeo de Fundo HTML5
   const videoElement = document.getElementById('background-video');
   const fallbackImage = document.querySelector('.fallback-image');

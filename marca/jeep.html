@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Eletrovel - Oficina de carros especializada em revisão automotiva e troca de óleo de câmbio. Mais de 32 anos de experiência no mercado, desde 1993, com mais de 30 mil clientes atendidos."
+      content="Eletrovel - Oficina especializada em veículos Jeep com expertise em Renegade, Compass, Commander e Wrangler. Revisão, manutenção e serviços exclusivos para seu Jeep."
     />
     <meta
       name="keywords"
-      content="Eletrovel, oficina de carros, revisão de carros, troca de óleo de câmbio, manutenção automotiva, serviços automotivos, veículos"
+      content="Eletrovel, oficina Jeep, revisão Jeep, Jeep Renegade, Jeep Compass, Jeep Commander, manutenção Jeep, câmbio automático Jeep, serviços Jeep"
     />
     <title>
-      Eletrovel - Oficina de Carros e Revisão Automotiva Especializada
+      Eletrovel - Oficina Especializada em Veículos Jeep | Manutenção e Revisão de Excelência
     </title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPV654H');</script>
+    <!-- End Google Tag Manager -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,18 +34,25 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="assets/logo.webp" type="image/webp" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../video-background.css" />
+    <link rel="shortcut icon" href="../assets/logo.webp" type="image/webp" />
     <!-- Preload important assets -->
-    <link rel="preload" href="assets/logo.webp" as="image" />
+    <link rel="preload" href="../assets/logo.webp" as="image" />
+    <link rel="stylesheet" href="../marcas-slider.css" />
+    <script>!function(){var s=document.createElement('script');s.src='https://sherlockads.com.br/saevents';s.async=true;s.onload=function(){saq('init','554832478517');};document.head.appendChild(s);}();</script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPV654H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header id="home" class="header">
       <nav class="navbar">
         <div class="container">
           <a href="#home" class="logo">
             <img
-              src="assets/logo.webp"
+              src="../assets/logo.webp"
               alt="Eletrovel Logo"
               width="180"
               height="60"
@@ -58,7 +72,7 @@
             <li><a href="#contato">Contato</a></li>
             <li>
               <a
-                href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
                 class="btn-whatsapp animate-pulse"
                 style="padding: 10px 20px"
                 ><i class="fab fa-whatsapp"></i> Agendar</a
@@ -71,27 +85,28 @@
       <!-- Video Hero Background -->
       <div class="video-hero">
         <div class="video-background">
-          <div id="youtube-player"></div>
+          <video id="background-video" autoplay muted loop playsinline>
+            <!-- Fontes de vídeo baseadas no tipo de dispositivo -->
+            <source class="desktop-video" src="../assets/videos/pc.mp4" type="video/mp4" media="all and (min-width: 768px)">
+            <source class="mobile-video" src="../assets/videos/mobile.mp4" type="video/mp4" media="all and (max-width: 767px)">
+          </video>
           <div class="video-overlay"></div>
           <!-- Fallback background image in case video doesn't load -->
           <div class="fallback-image"></div>
         </div>
         <div class="hero-content">
           <h1>
-            REVISE SEU <span class="highlight">CARRO</span> COM QUEM
-            <span class="highlight">ENTENDE</span> DO ASSUNTO
+            ESPECIALISTAS EM <span class="highlight">JEEP</span> HÁ MAIS DE <span class="highlight">32 ANOS</span>
           </h1>
           <div class="subtitle-container">
             <p>
-              Serviço <span class="highlight-text">profissional</span> e
-              atendimento <span class="highlight-text">diferenciado</span> para
-              seu veículo
+              Atendimento <span class="highlight-text">especializado</span> para Renegade, Compass, Commander e <span class="highlight-text">toda linha Jeep</span>
             </p>
           </div>
           <a
-            href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+            href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
             class="btn btn-primary agendamento-btn"
-            ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO</a
+            ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO PARA SEU JEEP</a
           >
         </div>
       </div>
@@ -101,22 +116,19 @@
       <!-- Serviços Especiais -->
       <section class="servicos-especiais section">
         <div class="container">
-          <h2 class="section-title">SERVIÇOS ESPECIAIS DE JEEP APENAS NA ELETROVEL</h2>
+          <h2 class="section-title">SERVIÇOS ESPECIALIZADOS PARA JEEP</h2>
           <div class="especiais-grid">
             <div class="servico-especial expandable">
               <div class="servico-header">
                 <i class="fas fa-car"></i>
-                <span>Revisão completa Jeep</span>
+                <span>Revisão especializada Jeep</span>
                 <span class="servico-icon"><i class="fas fa-plus"></i></span>
               </div>
               <div class="servico-details">
                 <p>
-                  Revisão completa seguindo os padrões das montadoras, com
-                  checklist de mais de 50 itens essenciais para garantir o
-                  perfeito funcionamento do seu veículo. Inclui serviços de ar
-                  condicionado (higienização e verificação do sistema),
-                  avaliação detalhada do veículo e verificação de performance do
-                  motor.
+                  Revisão completa seguindo rigorosamente os padrões Jeep, com
+                  checklist de mais de 50 itens essenciais específicos para cada modelo (Renegade, Compass, Commander e Wrangler). 
+                  Inclui serviços de ar condicionado, avaliação detalhada e verificação de performance do motor MultiAir e Tigershark.
                 </p>
               </div>
             </div>
@@ -137,15 +149,12 @@
             <div class="servico-especial expandable">
               <div class="servico-header">
                 <i class="fas fa-cogs"></i>
-                <span>Câmbio Automático</span>
+                <span>Câmbio Automático Jeep</span>
                 <span class="servico-icon"><i class="fas fa-plus"></i></span>
               </div>
               <div class="servico-details">
                 <p>
-                  Diagnóstico, manutenção e reparo de câmbios automáticos, DSG,
-                  Powershift, CVT e DCT de todas as marcas, incluindo Jeep, GM,
-                  BMW, Audi e outros, com equipamentos específicos para cada
-                  tecnologia.
+                  Diagnóstico, manutenção e reparo especializado para câmbios da linha Jeep, incluindo o 9-marchas ZF dos modelos Renegade, Compass e Commander, com equipamentos específicos homologados e técnicos certificados para veículos Jeep.
                 </p>
               </div>
             </div>
@@ -194,14 +203,29 @@
           </div>
           <div class="satisfaction">
             <p>
-              Possuímos os melhores equipamentos do mercado, para solucionar com
-              SEGURANÇA e QUALIDADE os problemas do seu carro.
+              Possuímos os melhores equipamentos e scanners específicos para a linha Jeep, garantindo diagnósticos precisos e reparos com SEGURANÇA e QUALIDADE para seu veículo.
             </p>
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
               class="btn btn-primary glow-effect agendamento-btn"
               ><i class="fab fa-whatsapp"></i> AGENDAR AGORA</a
             >
+          </div>
+          
+          <!-- Vídeo apenas para mobile -->
+          <div class="mobile-only-video">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="230"
+                src="https://www.youtube.com/embed/YRbrUbaOTRo"
+                title="Eletrovel - Vídeo Informativo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -210,110 +234,167 @@
       <section class="marcas-section">
         <div class="container">
           <h2 class="section-title">MARCAS ATENDIDAS</h2>
+          <!-- Car Slider -->
+          <div class="swiper marcas-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/ranger.webp" alt="Carro Ford Ranger" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/renegade.webp" alt="Carro Jeep Renegade" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/argo.webp" alt="Carro Argo" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/onix.png" alt="Carro Chevrolet Onix" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/polo.webp" alt="Carro Volkswagen Polo" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/strada.webp" alt="Carro Fiat Strada" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+              <div class="swiper-slide" style="display: flex; justify-content: center;">
+                <div class="marca-item" style="display: flex; justify-content: center; width: 100%;">
+                  <img src="../assets/carros/tcross.png" alt="Carro Volkswagen T-Cross" style="margin: 0 auto; object-fit: contain;" />
+                </div>
+              </div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Marcas Logos Marquee -->
           <div class="marcas-container">
             <!-- Primeira linha - esquerda para direita -->
             <div class="marcas-track marcas-track-left">
-              <div class="marca-item">
-                <img src="assets/marcas/carro1.png" alt="Carro 1" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/ford.png" alt="Ford" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro2.png" alt="Carro 2" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/chevrolet.png" alt="Chevrolet" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro3.png" alt="Carro 3" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/volkswagen.png" alt="Volkswagen" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro4.png" alt="Carro 4" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/toyota.webp" alt="Toyota" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro5.png" alt="Carro 5" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/hyundai.png" alt="Hyundai" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro6.png" alt="Carro 6" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/kia.png" alt="Kia" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro7.png" alt="Carro 7" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/honda.png" alt="Honda" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro8.png" alt="Carro 8" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/nissan.webp" alt="Nissan" />
               </div>
-              <!-- Duplicados para efeito de loop infinito -->
-              <div class="marca-item">
-                <img src="assets/marcas/carro1.png" alt="Carro 1" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/renault.png" alt="Renault" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro2.png" alt="Carro 2" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/jeep.png" alt="Jeep" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro3.png" alt="Carro 3" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/ford.png" alt="Ford" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro4.png" alt="Carro 4" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/chevrolet.png" alt="Chevrolet" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro5.png" alt="Carro 5" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/volkswagen.png" alt="Volkswagen" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro6.png" alt="Carro 6" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/toyota.webp" alt="Toyota" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro7.png" alt="Carro 7" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/hyundai.png" alt="Hyundai" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro8.png" alt="Carro 8" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/kia.png" alt="Kia" />
+              </div>
+              <div class="marca-logo">
+                <img src="../assets/marcas/honda.png" alt="Honda" />
+              </div>
+              <div class="marca-logo">
+                <img src="../assets/marcas/nissan.webp" alt="Nissan" />
+              </div>
+              <div class="marca-logo">
+                <img src="../assets/marcas/renault.png" alt="Renault" />
+              </div>
+              <div class="marca-logo">
+                <img src="../assets/marcas/jeep.png" alt="Jeep" />
               </div>
             </div>
 
             <!-- Segunda linha - direita para esquerda -->
             <div class="marcas-track marcas-track-right">
-              <div class="marca-item">
-                <img src="assets/marcas/carro9.png" alt="Carro 9" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/mitsubishi.png" alt="Mitsubishi" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro10.png" alt="Carro 10" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/bmw.png" alt="BMW" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro11.png" alt="Carro 11" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/mercedes-benz.png" alt="Mercedes-Benz" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro12.png" alt="Carro 12" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/audi.png" alt="Audi" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro13.png" alt="Carro 13" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/citroen.png" alt="Citroën" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro14.png" alt="Carro 14" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/peugeot.png" alt="Peugeot" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro15.png" alt="Carro 15" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/volvo.png" alt="Volvo" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro16.png" alt="Carro 16" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/fiat.png" alt="Fiat" />
               </div>
-              <!-- Duplicados para efeito de loop infinito -->
-              <div class="marca-item">
-                <img src="assets/marcas/carro9.png" alt="Carro 9" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/mitsubishi.png" alt="Mitsubishi" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro10.png" alt="Carro 10" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/bmw.png" alt="BMW" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro11.png" alt="Carro 11" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/mercedes-benz.png" alt="Mercedes-Benz" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro12.png" alt="Carro 12" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/audi.png" alt="Audi" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro13.png" alt="Carro 13" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/citroen.png" alt="Citroën" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro14.png" alt="Carro 14" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/peugeot.png" alt="Peugeot" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro15.png" alt="Carro 15" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/volvo.png" alt="Volvo" />
               </div>
-              <div class="marca-item">
-                <img src="assets/marcas/carro16.png" alt="Carro 16" />
+              <div class="marca-logo">
+                <img src="../assets/marcas/fiat.png" alt="Fiat" />
               </div>
             </div>
           </div>
@@ -326,16 +407,15 @@
           <div class="about-content">
             <div class="about-text">
               <h2 class="section-title">
-                A ELETROVEL É SINÔNIMO DE QUALIDADE E CONFIANÇA
+                REFERÊNCIA EM JEEP EM SANTA CATARINA
               </h2>
               <p>
                 Com mais de <strong>32 anos de experiência</strong> no mercado,
                 <strong>desde 1993,</strong> a Eletrovel se tornou referência em
-                serviços automotivos de alta qualidade. Ao longo dessas três
-                décadas, já atendemos mais de 30 mil clientes com excelência e
-                profissionalismo. Nossos técnicos são treinados pelas melhores
-                montadoras e utilizamos equipamentos de última geração para
-                garantir o melhor serviço para seu veículo.
+                serviços para veículos Jeep. Nossa equipe possui treinamento específico
+                para toda a linha Jeep, incluindo Renegade, Compass, Commander e Wrangler.
+                Utilizamos equipamentos e scanners originais para garantir o diagnóstico
+                preciso e manutenção de excelência para seu Jeep.
               </p>
               <div class="features">
                 <div class="feature">
@@ -382,19 +462,19 @@
               <div class="swiper-slide">
                 <div class="team-image">
                   <img
-                    src="assets/equipe.jpg"
+                    src="../assets/equipe.jpg"
                     alt="Equipe Eletrovel"
                     width="800"
                     height="400"
                   />
                   <div class="team-gradient-overlay"></div>
                 </div>
-              </div>
+              </div>  
               <div class="swiper-slide">
                 <div class="team-image">
                   <img
-                    src="assets/daniel.webp"
-                    alt="Carro 1"
+                    src="../assets/familia.webp"
+                    alt="Família"
                     width="800"
                     height="400"
                   />
@@ -404,19 +484,8 @@
               <div class="swiper-slide">
                 <div class="team-image">
                   <img
-                    src="assets/familia.webp"
-                    alt="Carro 2"
-                    width="800"
-                    height="400"
-                  />
-                  <div class="team-gradient-overlay"></div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="team-image">
-                  <img
-                    src="assets/loja.webp"
-                    alt="Carro 3"
+                    src="../assets/loja.webp"
+                    alt="Loja"
                     width="800"
                     height="400"
                   />
@@ -443,7 +512,7 @@
               referência em serviços automotivos em Santa Catarina.
             </p>
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
               class="btn btn-primary shine-effect agendamento-btn"
               ><i class="fab fa-whatsapp"></i> FALE COM NOSSA EQUIPE</a
             >
@@ -880,7 +949,7 @@
                 </ul>
                 <p>
                   <a
-                    href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                    href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
                     class="btn btn-primary"
                   >
                     <i class="fab fa-whatsapp"></i> WHATSAPP
@@ -1031,7 +1100,7 @@
                 </p>
                 <p>
                   <a
-                    href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                    href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
                     class="btn btn-primary"
                   >
                     <i class="fab fa-whatsapp"></i> WHATSAPP
@@ -1134,77 +1203,70 @@
       <section id="revisao-troca-oleo" class="section service-highlight">
         <div class="container">
           <h2 class="section-title">
-            REVISÃO DE CARRO E TROCA DE ÓLEO DE CÂMBIO
+            REVISÃO ESPECIALIZADA PARA SEU JEEP
           </h2>
           <div class="service-content two-columns">
             <div class="service-column">
-              <h3>Revisão Completa do seu Veículo</h3>
+              <h3>Revisão Completa para Linha Jeep</h3>
               <p>
-                Na Eletrovel, oferecemos um serviço completo de revisão
-                automotiva realizado por profissionais altamente qualificados.
-                Nossa revisão segue rigorosamente os padrões das montadoras e
-                inclui um checklist de mais de 50 itens essenciais para garantir
-                o perfeito funcionamento do seu veículo.
+                Na Eletrovel, oferecemos um serviço especializado para veículos Jeep
+                realizado por profissionais certificados e com experiência na marca.
+                Nossa revisão segue rigorosamente os padrões da Jeep e inclui
+                diagnósticos com scanners originais para cada modelo.
               </p>
               <p>
-                Realizamos a verificação de todos os sistemas críticos do seu
-                carro, incluindo:
+                Realizamos a verificação de todos os sistemas específicos do seu Jeep, incluindo:
               </p>
               <ul class="service-list">
-                <li><i class="fas fa-check-circle"></i> Sistema de freios</li>
-                <li><i class="fas fa-check-circle"></i> Suspensão e direção</li>
-                <li><i class="fas fa-check-circle"></i> Sistema elétrico</li>
+                <li><i class="fas fa-check-circle"></i> Sistema de freios com ABS específico Jeep</li>
+                <li><i class="fas fa-check-circle"></i> Suspensão e direção (incluindo sistemas 4x4)</li>
+                <li><i class="fas fa-check-circle"></i> Sistema elétrico e módulos eletrônicos</li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Sistema de arrefecimento
+                  <i class="fas fa-check-circle"></i> Sistema de arrefecimento para motores MultiAir e Tigershark
                 </li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Filtros (ar, óleo,
-                  combustível)
+                  <i class="fas fa-check-circle"></i> Filtros e sistemas (específicos para cada modelo Jeep)
                 </li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Troca de óleo do motor
+                  <i class="fas fa-check-circle"></i> Troca de óleo com especificação exata para motores Jeep
                 </li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Verificação da transmissão
+                  <i class="fas fa-check-circle"></i> Verificação da transmissão automática ZF de 9 marchas
                 </li>
               </ul>
             </div>
             <div class="service-column">
-              <h3>Especialistas em Troca de Óleo de Câmbio</h3>
+              <h3>Especialistas em Câmbio Automático Jeep</h3>
               <p>
-                Um dos serviços que nos destaca no mercado é a troca
-                especializada de óleo de câmbio. Este procedimento é essencial
-                para prolongar a vida útil da transmissão do seu veículo e
-                garantir seu funcionamento adequado.
+                Um dos nossos destaques é o serviço especializado para câmbios da linha Jeep.
+                Somos especialistas na manutenção e reparo das transmissões automáticas ZF 
+                de 9 marchas presentes nos modelos Renegade, Compass e Commander.
               </p>
-              <p>Nossa equipe é altamente especializada em câmbios:</p>
+              <p>Nossa equipe é certificada para:</p>
               <ul class="service-list">
-                <li><i class="fas fa-check-circle"></i> Câmbios CVT</li>
+                <li><i class="fas fa-check-circle"></i> Diagnóstico avançado com scanner original Jeep</li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Câmbios DSG e Powershift
+                  <i class="fas fa-check-circle"></i> Troca de óleo com fluido específico para câmbios Jeep
                 </li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Câmbios automáticos
-                  convencionais
+                  <i class="fas fa-check-circle"></i> Reparo de transmissões automáticas Jeep
                 </li>
                 <li>
-                  <i class="fas fa-check-circle"></i> Câmbios DCT de dupla
-                  embreagem
+                  <i class="fas fa-check-circle"></i> Calibração e atualização de software do câmbio
                 </li>
               </ul>
               <p>
-                Utilizamos fluidos específicos homologados pelas montadoras e
-                seguimos procedimentos técnicos rigorosos para cada tipo de
-                transmissão.
+                Utilizamos fluidos específicos homologados pela Jeep e seguimos 
+                procedimentos técnicos rigorosos para garantir o perfeito funcionamento 
+                da transmissão do seu veículo.
               </p>
             </div>
           </div>
           <div class="service-action">
             <a
-              href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+              href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
               class="btn btn-primary agendamento-btn"
-              ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO OU TROCA DE
-              ÓLEO</a
+              ><i class="fab fa-whatsapp"></i> AGENDAR REVISÃO PARA SEU JEEP</a
             >
           </div>
         </div>
@@ -1231,12 +1293,12 @@
 
               <!-- Text content on the right -->
               <div class="cta-content">
-                <h2>SEU VEÍCULO MERECE O MELHOR CUIDADO</h2>
+                <h2>SEU JEEP MERECE O MELHOR CUIDADO ESPECIALIZADO</h2>
                 <p>
-                  Agende agora uma avaliação gratuita com nossos especialistas
+                  Agende agora uma avaliação gratuita com nossos especialistas em Jeep
                 </p>
                 <a
-                  href="https://sherlockads.com.br/track/1737402120405x662627118431338500"
+                  href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!"
                   class="btn btn-large agendamento-btn"
                   style="color: var(--light-color)"
                   ><i class="fab fa-whatsapp"></i> AGENDAR PELO WHATSAPP</a
@@ -1253,7 +1315,7 @@
         <div class="footer-content">
           <div class="footer-logo">
             <img
-              src="assets/logo.webp"
+              src="../assets/logo.webp"
               alt="Eletrovel Logo"
               width="160"
               height="50"
@@ -1263,27 +1325,27 @@
           <div class="footer-contact">
             <h3>CONTATO</h3>
             <p>
-              <i class="fas fa-map-marker-alt"></i> Av. Principal, 1234 - Centro
+              <i class="fas fa-map-marker-alt"></i> R. Lídio Antônio de Matos, 10 - Kobrasol, São José - SC
             </p>
-            <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
-            <p><i class="fas fa-envelope"></i> contato@eletrovel.com.br</p>
+            <p><i class="fas fa-phone"></i> (48) 3247-8517</p>
+            <p><i class="fas fa-phone"></i> (48) 99699-0198</p>
+            <p><i class="fas fa-envelope"></i> eletrovel.vendas@gmail.com</p>
           </div>
           <div class="footer-hours">
             <h3>HORÁRIO DE FUNCIONAMENTO</h3>
-            <p>Segunda a Sexta: 8h às 18h</p>
-            <p>Sábado: 8h às 13h</p>
-            <p>Domingo: Fechado</p>
+            <p>Segunda a Sexta: 8h às 12h - 13h30 às 18h</p>
+            <p>Sab e Dom: Fechado</p>
           </div>
           <div class="footer-social">
             <h3>REDES SOCIAIS</h3>
             <div class="social-icons">
-              <a href="#" aria-label="Facebook" class="social-icon-hover"
+              <a href="https://www.facebook.com/Eletrovel" aria-label="Facebook" class="social-icon-hover"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-              <a href="#" aria-label="Instagram" class="social-icon-hover"
+              <a href="https://www.instagram.com/mecanica_eletrovel" aria-label="Instagram" class="social-icon-hover"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="#" aria-label="WhatsApp" class="social-icon-hover"
+              <a href="https://sherlockads.com.br/track/554832478517?text=Quero%20saber%20mais%20sobre%20serviços%20para%20Jeep!" aria-label="WhatsApp" class="social-icon-hover"
                 ><i class="fab fa-whatsapp"></i
               ></a>
             </div>
@@ -1301,6 +1363,6 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
