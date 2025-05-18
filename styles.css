@@ -168,7 +168,7 @@ section {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
@@ -484,7 +484,6 @@ header {
 
 .about-text h2 {
   text-align: left;
-  font-size: 2.2rem;
   margin-bottom: 25px;
 }
 
